@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head">
+</head>
+<body>
+<nav th:replace="fragments/navbar :: nav">
+</nav>
+
+<div class="container">
+  <div class="card m-5">
+    <div class="card-body ">
+      <form th:action="@{/save}" method="post" th:object="${appointment}">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" class="form-control" th:field="*{firstName}">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" class="form-control" th:field="*{lastName}">
+        </div>
+        <div class="form-group">
+          <label>Middle Name</label>
+          <input type="text" class="form-control" th:field="*{middleName}">
+        </div>
+        <div class="form-group">
+          <label>Total Amount Spent</label>
+          <input type="text" class="form-control" th:field="*{totalAmountSpent}">
+        </div>
+
+        <div class="form-group">
+          <label>Number Of Reward Points Earned</label>
+          <input type="text" class="form-control" th:field="*{numberOfRewardPointsEarned}">
+        </div>
+        <div class="form-group">
+          <label>Last Transaction Date</label>
+          <input type="date" class="form-control" th:field="*{lastTransactionDate}">
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
